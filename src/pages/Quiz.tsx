@@ -22,10 +22,38 @@ const Quiz = () => {
   const [quizFinished, setQuizFinished] = useState(false);
 
   if (!module) {
-    return <div>Módulo não encontrado</div>;
+    return (
+      <div className="max-w-4xl mx-auto space-y-6">
+        <p>Módulo não encontrado</p>
+        <Button onClick={() => navigate('/training')}>
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Voltar para Treinamentos
+        </Button>
+      </div>
+    );
   }
 
   const questions = module.quiz.questions;
+
+  if (questions.length === 0) {
+    return (
+      <div className="max-w-4xl mx-auto space-y-6">
+        <Button variant="ghost" onClick={() => navigate('/training')}>
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Voltar
+        </Button>
+        <Card>
+          <CardHeader>
+            <CardTitle>{module.title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">Este módulo está em desenvolvimento. O conteúdo e quiz serão adicionados em breve.</p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
   const question = questions[currentQuestion];
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 

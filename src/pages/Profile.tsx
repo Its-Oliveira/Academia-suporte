@@ -9,8 +9,8 @@ const Profile = () => {
 
   const achievements = [
     { title: 'Primeiro Login', completed: true, date: 'Hoje' },
-    { title: 'Primeiro Módulo', completed: false, date: '-' },
-    { title: 'Aprovado no Nível 1', completed: false, date: '-' },
+    { title: 'Primeiro Módulo Concluído', completed: false, date: '-' },
+    { title: 'Todos os Módulos Concluídos', completed: false, date: '-' },
   ];
 
   return (
@@ -47,15 +47,15 @@ const Profile = () => {
 
         <Card>
           <CardHeader>
-            <CardTitle>Nível Atual</CardTitle>
-            <CardDescription>Seu progresso no treinamento</CardDescription>
+            <CardTitle>Progresso Geral</CardTitle>
+            <CardDescription>Seus módulos de treinamento</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="text-center py-4">
-              <div className="text-4xl font-bold mb-2">Nível {user?.currentLevel || 1}</div>
-              <p className="text-muted-foreground">Básico</p>
+              <div className="text-4xl font-bold mb-2">0/3</div>
+              <p className="text-muted-foreground">Módulos Concluídos</p>
             </div>
-            <ProgressBar value={0} label="Progresso no Nível" />
+            <ProgressBar value={0} label="Progresso nos Módulos" />
           </CardContent>
         </Card>
       </div>
@@ -74,7 +74,7 @@ const Profile = () => {
               <span className="text-sm">Módulos Concluídos</span>
             </div>
             <p className="text-2xl font-bold">0/3</p>
-            <p className="text-xs text-muted-foreground">Nível 1</p>
+            <p className="text-xs text-muted-foreground">Continue estudando</p>
           </div>
 
           <div className="space-y-2">
