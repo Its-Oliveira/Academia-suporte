@@ -5,7 +5,6 @@ export interface User {
   name: string;
   email: string;
   role: UserRole;
-  currentLevel: number;
   progress: UserProgress[];
 }
 
@@ -25,7 +24,6 @@ export interface QuizAttempt {
 export interface Module {
   id: string;
   title: string;
-  level: number;
   description: string;
   content: string;
   quiz: Quiz;

@@ -43,7 +43,6 @@ export function ModuleCard({ module, progress = 0, isLocked = false, attempts = 
             <Clock className="h-4 w-4" />
             <span>{module.duration}</span>
           </div>
-          <Badge variant="outline">Nível {module.level}</Badge>
         </div>
 
         {!isLocked && progress > 0 && (

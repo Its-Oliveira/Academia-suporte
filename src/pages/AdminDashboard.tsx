@@ -13,14 +13,14 @@ const AdminDashboard = () => {
   ];
 
   const usersList = [
-    { name: 'Admin Sistema', email: 'admin@sistema.com', level: 3, progress: 100, avgScore: 100 },
-    { name: 'João Silva', email: 'joao@sistema.com', level: 1, progress: 0, avgScore: 0 },
+    { name: 'Admin Sistema', email: 'admin@sistema.com', progress: 0, avgScore: 0 },
+    { name: 'João Silva', email: 'joao@sistema.com', progress: 0, avgScore: 0 },
   ];
 
   const moduleStats = [
-    { name: 'Importação de Planilha', attempts: 0, avgScore: 0, completionRate: 0 },
-    { name: 'Como Criar Composição', attempts: 0, avgScore: 0, completionRate: 0 },
-    { name: 'Como Criar Insumo', attempts: 0, avgScore: 0, completionRate: 0 },
+    { name: 'Módulo 1', attempts: 0, avgScore: 0, completionRate: 0 },
+    { name: 'Módulo 2', attempts: 0, avgScore: 0, completionRate: 0 },
+    { name: 'Módulo 3', attempts: 0, avgScore: 0, completionRate: 0 },
   ];
 
   return (
@@ -72,8 +72,7 @@ const AdminDashboard = () => {
                         <p className="text-sm text-muted-foreground">{user.email}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-medium">Nível {user.level}</p>
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-sm font-medium">
                           Média: {user.avgScore > 0 ? `${user.avgScore}%` : '-'}
                         </p>
                       </div>

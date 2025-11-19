@@ -8,16 +8,16 @@ const Dashboard = () => {
 
   const stats = [
     {
-      title: 'Nível Atual',
-      value: `Nível ${user?.currentLevel || 1}`,
-      icon: Trophy,
-      description: 'Básico',
+      title: 'Módulos Totais',
+      value: '3',
+      icon: BookOpen,
+      description: 'Disponíveis',
     },
     {
       title: 'Módulos Concluídos',
       value: '0/3',
-      icon: BookOpen,
-      description: 'Nível 1',
+      icon: Trophy,
+      description: 'Continue aprendendo',
     },
     {
       title: 'Progresso Geral',
@@ -59,8 +59,8 @@ const Dashboard = () => {
 
       <Card>
         <CardHeader>
-          <CardTitle>Seu Progresso no Nível 1</CardTitle>
-          <CardDescription>Complete todos os módulos para avançar</CardDescription>
+          <CardTitle>Seu Progresso</CardTitle>
+          <CardDescription>Complete os módulos de treinamento</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <ProgressBar value={0} label="Progresso Total" />
@@ -70,7 +70,7 @@ const Dashboard = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Inicie o Módulo 1: Importação de Planilha de Orçamento
+                Inicie o Módulo 1
               </li>
               <li className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-muted" />

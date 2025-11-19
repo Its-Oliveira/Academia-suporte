@@ -17,7 +17,6 @@ const mockUsers: User[] = [
     name: 'Admin Sistema',
     email: 'admin@sistema.com',
     role: 'admin',
-    currentLevel: 3,
     progress: []
   },
   {
@@ -25,7 +24,6 @@ const mockUsers: User[] = [
     name: 'João Silva',
     email: 'joao@sistema.com',
     role: 'student',
-    currentLevel: 1,
     progress: []
   }
 ];

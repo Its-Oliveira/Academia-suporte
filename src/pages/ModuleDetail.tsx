@@ -54,19 +54,26 @@ const ModuleDetail = () => {
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-muted-foreground">
-            Este módulo contém um quiz com {module.quiz.questions.length} questões.
-            Você precisa atingir no mínimo {module.quiz.passingScore}% para ser aprovado.
+            Este módulo contém {module.quiz.questions.length === 0 ? 'um quiz em desenvolvimento' : `um quiz com ${module.quiz.questions.length} questões`}.
+            {module.quiz.questions.length > 0 && ` Você precisa atingir no mínimo ${module.quiz.passingScore}% para ser aprovado.`}
           </p>
-          <p className="text-sm text-muted-foreground">
-            Tentativas disponíveis: {module.quiz.maxAttempts}
-          </p>
-          <Button 
-            onClick={() => navigate(`/quiz/${module.id}`)}
-            className="gap-2"
-          >
-            <PlayCircle className="h-4 w-4" />
-            Iniciar Quiz
-          </Button>
+          {module.quiz.questions.length > 0 && (
+            <>
+              <p className="text-sm text-muted-foreground">
+                Tentativas disponíveis: {module.quiz.maxAttempts}
+              </p>
+              <Button 
+                onClick={() => navigate(`/quiz/${module.id}`)}
+                className="gap-2"
+              >
+                <PlayCircle className="h-4 w-4" />
+                Iniciar Quiz
+              </Button>
+            </>
+          )}
+          {module.quiz.questions.length === 0 && (
+            <p className="text-sm text-muted-foreground">Quiz em desenvolvimento.</p>
+          )}
         </CardContent>
       </Card>
     </div>
