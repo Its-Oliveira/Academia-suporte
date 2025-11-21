@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { modules } from '@/data/modules';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft, PlayCircle } from 'lucide-react';
+import { DayNavigation } from '@/components/DayNavigation';
 
 const ModuleDetail = () => {
   const { moduleId } = useParams();
   const navigate = useNavigate();
   const module = modules.find(m => m.id === moduleId);
+  const [currentDayIndex, setCurrentDayIndex] = useState(0);
 
   if (!module) {
     return (
@@ -36,17 +39,26 @@ const ModuleDetail = () => {
         <p className="text-muted-foreground mt-2">{module.description}</p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Conteúdo do Módulo</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div 
-            className="prose prose-sm max-w-none"
-            dangerouslySetInnerHTML={{ __html: module.content }}
-          />
-        </CardContent>
-      </Card>
+      {/* Show Days Navigation if module has days */}
+      {module.days && module.days.length > 0 ? (
+        <DayNavigation 
+          days={module.days}
+          currentDayIndex={currentDayIndex}
+          onDayChange={setCurrentDayIndex}
+        />
+      ) : (
+        <Card>
+          <CardHeader>
+            <CardTitle>Conteúdo do Módulo</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div 
+              className="prose prose-sm max-w-none"
+              dangerouslySetInnerHTML={{ __html: module.content }}
+            />
+          </CardContent>
+        </Card>
+      )}
 
       <Card>
         <CardHeader>

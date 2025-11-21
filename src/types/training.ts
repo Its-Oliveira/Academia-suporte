@@ -21,6 +21,14 @@ export interface QuizAttempt {
   answers: number[];
 }
 
+export interface Day {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  exercises?: string;
+}
+
 export interface Module {
   id: string;
   title: string;
@@ -28,6 +36,7 @@ export interface Module {
   content: string;
   quiz: Quiz;
   duration: string;
+  days?: Day[];
 }
 
 export interface Quiz {
