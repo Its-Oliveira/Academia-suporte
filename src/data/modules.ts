@@ -3,7 +3,7 @@ import { Module } from '@/types/training';
 export const modules: Module[] = [
   {
     id: '1',
-    title: 'Módulo 1',
+    title: 'Treinamento Guiado Nível 1',
     description: 'Treinamento completo dividido em 3 dias',
     duration: '3 dias',
     content: `
@@ -42,7 +42,7 @@ export const modules: Module[] = [
   },
   {
     id: '2',
-    title: 'Módulo 2',
+    title: 'Treinamento Guiado Nível 2',
     description: '',
     duration: 'A definir',
     content: `
@@ -58,7 +58,7 @@ export const modules: Module[] = [
   },
   {
     id: '3',
-    title: 'Módulo 3',
+    title: 'Treinamento Guiado Nível 3',
     description: '',
     duration: 'A definir',
     content: `
