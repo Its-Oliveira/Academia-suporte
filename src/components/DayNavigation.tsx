@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Day } from '@/types/training';
+import { DayContent } from './DayContent';
 
 interface DayNavigationProps {
   days: Day[];
@@ -33,40 +34,51 @@ export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigat
       </div>
 
       {/* Day Content */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <CardTitle className="text-2xl">{currentDay.title}</CardTitle>
-              <CardDescription className="mt-2">{currentDay.description}</CardDescription>
+      {currentDay.pages && currentDay.pages.length > 0 ? (
+        <DayContent 
+          pages={currentDay.pages}
+          onComplete={() => {
+            if (canGoNext) {
+              onDayChange(currentDayIndex + 1);
+            }
+          }}
+        />
+      ) : (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="text-2xl">{currentDay.title}</CardTitle>
+                <CardDescription className="mt-2">{currentDay.description}</CardDescription>
+              </div>
+              <Badge variant="outline">
+                Dia {currentDayIndex + 1} de {days.length}
+              </Badge>
             </div>
-            <Badge variant="outline">
-              Dia {currentDayIndex + 1} de {days.length}
-            </Badge>
-          </div>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          {/* Main Content */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3 text-foreground">Conteúdo do Treinamento</h3>
-            <div 
-              className="prose prose-sm max-w-none text-muted-foreground"
-              dangerouslySetInnerHTML={{ __html: currentDay.content }}
-            />
-          </div>
-
-          {/* Exercises */}
-          {currentDay.exercises && (
-            <div className="pt-4 border-t">
-              <h3 className="text-lg font-semibold mb-3 text-foreground">Atividades Práticas</h3>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {/* Main Content */}
+            <div>
+              <h3 className="text-lg font-semibold mb-3 text-foreground">Conteúdo do Treinamento</h3>
               <div 
                 className="prose prose-sm max-w-none text-muted-foreground"
-                dangerouslySetInnerHTML={{ __html: currentDay.exercises }}
+                dangerouslySetInnerHTML={{ __html: currentDay.content }}
               />
             </div>
-          )}
-        </CardContent>
-      </Card>
+
+            {/* Exercises */}
+            {currentDay.exercises && (
+              <div className="pt-4 border-t">
+                <h3 className="text-lg font-semibold mb-3 text-foreground">Atividades Práticas</h3>
+                <div 
+                  className="prose prose-sm max-w-none text-muted-foreground"
+                  dangerouslySetInnerHTML={{ __html: currentDay.exercises }}
+                />
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      )}
 
       {/* Navigation Buttons */}
       <div className="flex justify-between items-center">
