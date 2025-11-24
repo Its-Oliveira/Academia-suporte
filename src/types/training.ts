@@ -21,12 +21,26 @@ export interface QuizAttempt {
   answers: number[];
 }
 
+export interface ChecklistItem {
+  id: string;
+  text: string;
+  completed?: boolean;
+}
+
+export interface DayPage {
+  id: string;
+  title: string;
+  subtitle: string;
+  items: ChecklistItem[];
+}
+
 export interface Day {
   id: string;
   title: string;
   description: string;
   content: string;
   exercises?: string;
+  pages?: DayPage[];
 }
 
 export interface Module {
