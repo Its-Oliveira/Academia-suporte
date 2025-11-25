@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,36 +13,41 @@ interface DayNavigationProps {
 }
 
 export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigationProps) {
+  const [isTrainingStarted, setIsTrainingStarted] = useState(false);
   const currentDay = days[currentDayIndex];
   const canGoPrevious = currentDayIndex > 0;
   const canGoNext = currentDayIndex < days.length - 1;
 
   return (
     <div className="space-y-6">
-      {/* Progress Indicator */}
-      <div className="flex items-center justify-center gap-2">
-        {days.map((day, index) => (
-          <Button
-            key={day.id}
-            variant={index === currentDayIndex ? 'default' : 'outline'}
-            size="sm"
-            onClick={() => onDayChange(index)}
-            className="min-w-[100px]"
-          >
-            {day.title}
-          </Button>
-        ))}
-      </div>
+      {/* Progress Indicator - Oculto quando treinamento iniciado */}
+      {!isTrainingStarted && (
+        <div className="flex items-center justify-center gap-2">
+          {days.map((day, index) => (
+            <Button
+              key={day.id}
+              variant={index === currentDayIndex ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => onDayChange(index)}
+              className="min-w-[100px]"
+            >
+              {day.title}
+            </Button>
+          ))}
+        </div>
+      )}
 
       {/* Day Content */}
       {currentDay.pages && currentDay.pages.length > 0 ? (
         <DayContent 
           pages={currentDay.pages}
           onComplete={() => {
+            setIsTrainingStarted(false); // Reset ao completar
             if (canGoNext) {
               onDayChange(currentDayIndex + 1);
             }
           }}
+          onTrainingStart={() => setIsTrainingStarted(true)}
         />
       ) : (
         <Card>
@@ -80,27 +86,29 @@ export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigat
         </Card>
       )}
 
-      {/* Navigation Buttons */}
-      <div className="flex justify-between items-center">
-        <Button
-          variant="outline"
-          onClick={() => onDayChange(currentDayIndex - 1)}
-          disabled={!canGoPrevious}
-          className="gap-2"
-        >
-          <ChevronLeft className="h-4 w-4" />
-          Dia Anterior
-        </Button>
+      {/* Navigation Buttons - Ocultos quando treinamento iniciado */}
+      {!isTrainingStarted && (
+        <div className="flex justify-between items-center">
+          <Button
+            variant="outline"
+            onClick={() => onDayChange(currentDayIndex - 1)}
+            disabled={!canGoPrevious}
+            className="gap-2"
+          >
+            <ChevronLeft className="h-4 w-4" />
+            Dia Anterior
+          </Button>
 
-        <Button
-          onClick={() => onDayChange(currentDayIndex + 1)}
-          disabled={!canGoNext}
-          className="gap-2"
-        >
-          Próximo Dia
-          <ChevronRight className="h-4 w-4" />
-        </Button>
-      </div>
+          <Button
+            onClick={() => onDayChange(currentDayIndex + 1)}
+            disabled={!canGoNext}
+            className="gap-2"
+          >
+            Próximo Dia
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
