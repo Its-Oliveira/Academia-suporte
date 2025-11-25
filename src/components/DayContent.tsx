@@ -11,18 +11,25 @@ import { ProgressBar } from './ProgressBar';
 interface DayContentProps {
   pages: DayPage[];
   onComplete?: () => void;
+  onTrainingStart?: () => void;
 }
 
-export function DayContent({ pages, onComplete }: DayContentProps) {
+export function DayContent({ pages, onComplete, onTrainingStart }: DayContentProps) {
   const [isStarted, setIsStarted] = useState(false);
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
   const [pagesData, setPagesData] = useState<DayPage[]>(pages);
-  const [completedPages, setCompletedPages] = useState<Set<number>>(new Set());
 
   const currentPage = pagesData[currentPageIndex];
   const canGoPrevious = currentPageIndex > 0;
   const canGoNext = currentPageIndex < pagesData.length - 1;
-  const isCurrentPageComplete = completedPages.has(currentPageIndex);
+  
+  // Verificar se todos os itens da página atual estão completos
+  const allCurrentPageItemsComplete = currentPage.items.every(item => item.completed);
+  
+  // Verificar se todas as páginas estão 100% completas
+  const allPagesComplete = pagesData.every(page => 
+    page.items.every(item => item.completed)
+  );
   
   // Calcular progresso total
   const allItemsCount = pagesData.reduce((sum, page) => sum + page.items.length, 0);
@@ -45,19 +52,32 @@ export function DayContent({ pages, onComplete }: DayContentProps) {
   };
 
   const handleMarkPageComplete = () => {
-    setCompletedPages(prev => new Set([...prev, currentPageIndex]));
+    // Marcar TODOS os itens da página atual como completos
+    setPagesData(prev => prev.map(page => 
+      page.id === currentPage.id
+        ? {
+            ...page,
+            items: page.items.map(item => ({ ...item, completed: true }))
+          }
+        : page
+    ));
   };
 
   const handleNext = () => {
-    if (!isCurrentPageComplete) {
-      return; // Bloqueia navegação se página não estiver completa
+    if (!allCurrentPageItemsComplete) {
+      return; // Bloqueia navegação se não todos os itens estiverem completos
     }
     
     if (canGoNext) {
       setCurrentPageIndex(prev => prev + 1);
-    } else if (onComplete) {
+    } else if (allPagesComplete && onComplete) {
       onComplete();
     }
+  };
+
+  const handleStartTraining = () => {
+    setIsStarted(true);
+    onTrainingStart?.();
   };
 
   // Tela de prévia antes de iniciar o treinamento
@@ -99,7 +119,7 @@ export function DayContent({ pages, onComplete }: DayContentProps) {
 
             {/* Botão iniciar */}
             <Button 
-              onClick={() => setIsStarted(true)} 
+              onClick={handleStartTraining} 
               size="lg" 
               className="w-full gap-2"
             >
@@ -140,12 +160,12 @@ export function DayContent({ pages, onComplete }: DayContentProps) {
       />
 
       {/* Botão Marcar Página como Completa */}
-      {!isCurrentPageComplete && (
+      {!allCurrentPageItemsComplete && (
         <Card className="bg-muted/50">
           <CardContent className="pt-6">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-sm text-muted-foreground">
-                Você deve marcar esta página como completa para avançar
+                Complete todos os itens ou use o atalho para marcar tudo como completo
               </div>
               <Button 
                 onClick={handleMarkPageComplete}
@@ -174,7 +194,7 @@ export function DayContent({ pages, onComplete }: DayContentProps) {
 
         <Button
           onClick={handleNext}
-          disabled={!isCurrentPageComplete}
+          disabled={canGoNext ? !allCurrentPageItemsComplete : !allPagesComplete}
           className="gap-2"
         >
           {canGoNext ? `Próximo: Módulo ${currentPageIndex + 2}` : 'Concluir Dia 1'}
