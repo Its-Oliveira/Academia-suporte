@@ -1,73 +1,150 @@
-# Welcome to your Lovable project
+# Sistema de Treinamento - Plataforma de Orçamentos
 
-## Project info
+Sistema profissional de treinamento para equipe de suporte com módulos progressivos, controle de progresso e sistema de autenticação.
 
-**URL**: https://lovable.dev/projects/068e9756-bd25-4246-a9ab-81321a658883
+## 🚀 Deploy no GitHub Pages
 
-## How can I edit this code?
+### Pré-requisitos
+- Node.js 18+ instalado
+- Conta no GitHub
+- Git instalado
 
-There are several ways of editing your application.
+### Passos para Deploy
 
-**Use Lovable**
+#### 1. Preparar o Projeto Localmente
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/068e9756-bd25-4246-a9ab-81321a658883) and start prompting.
+```bash
+# Clone o repositório (se ainda não tiver)
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 
-Changes made via Lovable will be committed automatically to this repo.
+# Instale as dependências
+npm install
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Teste o build local
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+#### 2. Criar/Atualizar Repositório no GitHub
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Se ainda não tiver um repositório remoto
+git remote add origin https://github.com/seu-usuario/seu-repositorio.git
 
-**Use GitHub Codespaces**
+# Envie o código
+git add .
+git commit -m "Configuração para GitHub Pages"
+git push -u origin main
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+#### 3. Ativar GitHub Pages
 
-## What technologies are used for this project?
+1. Acesse seu repositório no GitHub
+2. Vá em **Settings** > **Pages**
+3. Em **Source**, selecione **GitHub Actions**
+4. O workflow de deploy será executado automaticamente
 
-This project is built with:
+#### 4. Acessar o Site
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Após o deploy (cerca de 2-5 minutos), seu site estará disponível em:
+```
+https://seu-usuario.github.io/seu-repositorio/
+```
 
-## How can I deploy this project?
+### 🔄 Atualizações Automáticas
 
-Simply open [Lovable](https://lovable.dev/projects/068e9756-bd25-4246-a9ab-81321a658883) and click on Share -> Publish.
+Qualquer push para a branch `main` irá automaticamente:
+1. Fazer build do projeto
+2. Fazer deploy para GitHub Pages
+3. Atualizar o site em produção
 
-## Can I connect a custom domain to my Lovable project?
+## 🛠️ Comandos de Desenvolvimento
 
-Yes, you can!
+```bash
+# Instalar dependências
+npm install
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# Rodar em modo de desenvolvimento
+npm run dev
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# Fazer build para produção
+npm run build
+
+# Preview do build de produção
+npm run preview
+```
+
+## 📁 Estrutura do Projeto
+
+```
+/
+├── .github/workflows/     # GitHub Actions workflows
+├── public/                # Arquivos estáticos
+│   ├── .nojekyll         # Necessário para GitHub Pages
+│   └── favicon.ico       # Ícone do site
+├── src/                   # Código fonte
+│   ├── components/       # Componentes React
+│   ├── pages/            # Páginas da aplicação
+│   ├── contexts/         # Contextos React
+│   ├── data/             # Dados estáticos
+│   └── layouts/          # Layouts da aplicação
+├── index.html            # HTML principal
+├── vite.config.ts        # Configuração Vite
+└── package.json          # Dependências
+```
+
+## 🔧 Tecnologias Utilizadas
+
+- **React 18** - Biblioteca UI
+- **TypeScript** - Tipagem estática
+- **Vite** - Build tool
+- **Tailwind CSS** - Framework CSS
+- **React Router** - Roteamento (Hash mode para GitHub Pages)
+- **Shadcn/ui** - Componentes UI
+- **Lucide React** - Ícones
+
+## 📝 Funcionalidades
+
+- ✅ Sistema de autenticação
+- ✅ Treinamento progressivo em 3 níveis
+- ✅ Controle de progresso por página
+- ✅ Timer de treinamento
+- ✅ Sistema de quiz
+- ✅ Biblioteca de recursos
+- ✅ Dashboard administrativo
+- ✅ Tema claro/escuro
+
+## 🔐 Credenciais de Teste
+
+### Usuário Admin
+- Email: `admin@example.com`
+- Senha: `admin123`
+
+### Usuário Regular
+- Email: `user@example.com`
+- Senha: `user123`
+
+## 🐛 Troubleshooting
+
+### Build falha no GitHub Actions
+- Verifique se todas as dependências estão no `package.json`
+- Verifique erros de TypeScript no código
+
+### Página em branco após deploy
+- Confirme que o workflow de deploy foi executado com sucesso
+- Verifique se o `base: './'` está configurado no `vite.config.ts`
+
+### Rotas não funcionam
+- O projeto usa Hash Router (`#/`) para compatibilidade com GitHub Pages
+- Todas as rotas devem ter o formato: `https://seu-site.github.io/repo/#/rota`
+
+## 📞 Suporte
+
+Para problemas ou dúvidas:
+1. Verifique os logs do GitHub Actions
+2. Revise a documentação do Vite
+3. Confira as issues do repositório
+
+## 📄 Licença
+
+Este projeto é proprietário e destinado ao uso interno da equipe.
