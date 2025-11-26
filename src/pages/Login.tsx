@@ -7,47 +7,46 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { BookOpen } from 'lucide-react';
-
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { login } = useAuth();
+  const {
+    login
+  } = useAuth();
   const navigate = useNavigate();
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
     try {
       const success = await login(email, password);
       if (success) {
         toast({
           title: 'Login realizado',
-          description: 'Bem-vindo ao sistema de treinamento!',
+          description: 'Bem-vindo ao sistema de treinamento!'
         });
         navigate('/dashboard');
       } else {
         toast({
           title: 'Erro no login',
           description: 'Email ou senha incorretos.',
-          variant: 'destructive',
+          variant: 'destructive'
         });
       }
     } catch (error) {
       toast({
         title: 'Erro',
         description: 'Ocorreu um erro ao fazer login.',
-        variant: 'destructive',
+        variant: 'destructive'
       });
     } finally {
       setIsLoading(false);
     }
   };
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-muted p-4">
+  return <div className="min-h-screen flex items-center justify-center bg-muted p-4">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center space-y-2">
           <div className="flex justify-center mb-4">
@@ -56,7 +55,8 @@ const Login = () => {
             </div>
           </div>
           <h1 className="text-3xl font-bold text-foreground">Sistema de Treinamento</h1>
-          <p className="text-muted-foreground">Plataforma de Orçamentos</p>
+          <p className="text-muted-foreground">​Suporte OrçaFascio
+   </p>
         </div>
 
         <Card>
@@ -68,25 +68,11 @@ const Login = () => {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="seu@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+                <Input id="email" type="email" placeholder="seu@email.com" value={email} onChange={e => setEmail(e.target.value)} required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="password">Senha</Label>
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
+                <Input id="password" type="password" placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} required />
               </div>
               <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? 'Entrando...' : 'Entrar'}
@@ -100,8 +86,6 @@ const Login = () => {
           </CardContent>
         </Card>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Login;
