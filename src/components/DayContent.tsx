@@ -7,15 +7,29 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { TrainingTimer } from './TrainingTimer';
 import { ProgressBar } from './ProgressBar';
+import { CompletionScreen } from './CompletionScreen';
 
 interface DayContentProps {
   pages: DayPage[];
   onComplete?: () => void;
   onTrainingStart?: () => void;
+  onNextDay?: () => void;
+  onBackToTraining: () => void;
+  dayNumber: number;
+  hasNextDay: boolean;
 }
 
-export function DayContent({ pages, onComplete, onTrainingStart }: DayContentProps) {
+export function DayContent({ 
+  pages, 
+  onComplete, 
+  onTrainingStart,
+  onNextDay,
+  onBackToTraining,
+  dayNumber,
+  hasNextDay
+}: DayContentProps) {
   const [isStarted, setIsStarted] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
   const [pagesData, setPagesData] = useState<DayPage[]>(pages);
 
@@ -70,8 +84,9 @@ export function DayContent({ pages, onComplete, onTrainingStart }: DayContentPro
     
     if (canGoNext) {
       setCurrentPageIndex(prev => prev + 1);
-    } else if (allPagesComplete && onComplete) {
-      onComplete();
+    } else if (allPagesComplete) {
+      setIsCompleted(true);
+      onComplete?.();
     }
   };
 
@@ -79,6 +94,18 @@ export function DayContent({ pages, onComplete, onTrainingStart }: DayContentPro
     setIsStarted(true);
     onTrainingStart?.();
   };
+
+  // Tela de conclusão
+  if (isCompleted) {
+    return (
+      <CompletionScreen 
+        dayNumber={dayNumber}
+        onNextDay={onNextDay}
+        onBackToTraining={onBackToTraining}
+        hasNextDay={hasNextDay}
+      />
+    );
+  }
 
   // Tela de prévia antes de iniciar o treinamento
   if (!isStarted) {

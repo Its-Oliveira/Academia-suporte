@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -13,10 +14,20 @@ interface DayNavigationProps {
 }
 
 export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigationProps) {
+  const navigate = useNavigate();
   const [isTrainingStarted, setIsTrainingStarted] = useState(false);
   const currentDay = days[currentDayIndex];
   const canGoPrevious = currentDayIndex > 0;
   const canGoNext = currentDayIndex < days.length - 1;
+
+  const handleNextDay = () => {
+    setIsTrainingStarted(false);
+    onDayChange(currentDayIndex + 1);
+  };
+
+  const handleBackToTraining = () => {
+    navigate('/training');
+  };
 
   return (
     <div className="space-y-6">
@@ -41,13 +52,12 @@ export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigat
       {currentDay.pages && currentDay.pages.length > 0 ? (
         <DayContent 
           pages={currentDay.pages}
-          onComplete={() => {
-            setIsTrainingStarted(false); // Reset ao completar
-            if (canGoNext) {
-              onDayChange(currentDayIndex + 1);
-            }
-          }}
+          onComplete={() => setIsTrainingStarted(false)}
           onTrainingStart={() => setIsTrainingStarted(true)}
+          onNextDay={canGoNext ? handleNextDay : undefined}
+          onBackToTraining={handleBackToTraining}
+          dayNumber={currentDayIndex + 1}
+          hasNextDay={canGoNext}
         />
       ) : (
         <Card>
