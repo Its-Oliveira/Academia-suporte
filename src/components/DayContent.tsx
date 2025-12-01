@@ -113,7 +113,7 @@ export function DayContent({
       <div className="max-w-3xl mx-auto space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">📚 Prévia do Treinamento - Dia {dayNumber}</CardTitle>
+            <CardTitle className="text-2xl">📚 Prévia do Treinamento - Dia 1</CardTitle>
             <CardDescription>
               Veja o que você vai aprender neste módulo de treinamento
             </CardDescription>
@@ -224,7 +224,7 @@ export function DayContent({
           disabled={canGoNext ? !allCurrentPageItemsComplete : !allPagesComplete}
           className="gap-2"
         >
-          {canGoNext ? `Próximo: Módulo ${currentPageIndex + 2}` : `Concluir Dia ${dayNumber}`}
+          {canGoNext ? `Próximo: Módulo ${currentPageIndex + 2}` : 'Concluir Dia 1'}
           <ChevronRight className="h-4 w-4" />
         </Button>
       </div>
