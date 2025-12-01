@@ -127,7 +127,7 @@ export const modules: Module[] = [
       {
         id: 'day-2',
         title: 'Dia 2',
-        description: 'Base de Preços, Encargos, BDI e Orçamento',
+        description: 'Base de Preços, Encargos, BDI, Orçamento, Diário de Obras, Planejamento e Medição',
         content: '',
         pages: [
           {

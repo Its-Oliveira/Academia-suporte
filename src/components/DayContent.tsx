@@ -17,6 +17,7 @@ interface DayContentProps {
   onBackToTraining: () => void;
   dayNumber: number;
   hasNextDay: boolean;
+  dayDescription: string;
 }
 
 export function DayContent({ 
@@ -26,7 +27,8 @@ export function DayContent({
   onNextDay,
   onBackToTraining,
   dayNumber,
-  hasNextDay
+  hasNextDay,
+  dayDescription
 }: DayContentProps) {
   const [isStarted, setIsStarted] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
@@ -113,9 +115,9 @@ export function DayContent({
       <div className="max-w-3xl mx-auto space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">📚 Prévia do Treinamento - Dia 1</CardTitle>
+            <CardTitle className="text-2xl">📚 Prévia do Treinamento - Dia {dayNumber}</CardTitle>
             <CardDescription>
-              Veja o que você vai aprender neste módulo de treinamento
+              {dayDescription}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -224,7 +226,7 @@ export function DayContent({
           disabled={canGoNext ? !allCurrentPageItemsComplete : !allPagesComplete}
           className="gap-2"
         >
-          {canGoNext ? `Próximo: Módulo ${currentPageIndex + 2}` : 'Concluir Dia 1'}
+          {canGoNext ? `Próximo: Módulo ${currentPageIndex + 2}` : `Concluir Dia ${dayNumber}`}
           <ChevronRight className="h-4 w-4" />
         </Button>
       </div>
