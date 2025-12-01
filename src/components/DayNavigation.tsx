@@ -58,6 +58,7 @@ export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigat
           onBackToTraining={handleBackToTraining}
           dayNumber={currentDayIndex + 1}
           hasNextDay={canGoNext}
+          dayDescription={currentDay.description}
         />
       ) : (
         <Card>
