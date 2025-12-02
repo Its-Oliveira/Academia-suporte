@@ -492,9 +492,165 @@ export const modules: Module[] = [
       {
         id: 'day-3',
         title: 'Dia 3',
-        description: 'Conclusão e avaliação',
-        content: '<p>Conteúdo do Dia 3 a ser definido.</p>',
-        exercises: '<p>Exercícios práticos do Dia 3 a ser definido.</p>'
+        description: 'Módulo de Compras e Bases de Preço',
+        content: '',
+        pages: [
+          {
+            id: 'page-1',
+            title: '✅ MÓDULO 1 – CRIAÇÃO DE PEDIDO DE COMPRAS',
+            subtitle: '🛒 Objetivo: Criar um pedido de compras vinculado ao orçamento e obra do Dia 1.',
+            items: [
+              {
+                id: 'compras-1',
+                text: 'Defina a data do pedido de compras como a <strong>mesma data do curso</strong>',
+                completed: false
+              },
+              {
+                id: 'compras-2',
+                text: 'No formulário de criação do pedido, insira a descrição: <strong>"Nível 1 – TESTE GUIADO [SEU NOME]"</strong>',
+                completed: false
+              },
+              {
+                id: 'compras-3',
+                text: 'Vincule o <strong>orçamento criado no primeiro dia</strong> do treinamento (TESTE GUIADO ELISA)',
+                completed: false
+              },
+              {
+                id: 'compras-4',
+                text: 'Vincule também a <strong>obra criada no primeiro dia</strong> do treinamento (TESTE GUIADO ELISA)',
+                completed: false
+              }
+            ]
+          },
+          {
+            id: 'page-2',
+            title: '✅ MÓDULO 2 – ADIÇÃO DE ITEM AO PEDIDO (INSUMO)',
+            subtitle: '📦 Objetivo: Adicionar itens do orçamento ao pedido de compras.',
+            items: [
+              {
+                id: 'item-1',
+                text: 'Acesse a opção <strong>"Adicionar Item"</strong> e, em seguida, clique em <strong>"Adicionar Itens do Orçamento"</strong>',
+                completed: false
+              },
+              {
+                id: 'item-2',
+                text: 'Selecione a <strong>descrição do orçamento</strong> exibida para visualizar os itens disponíveis',
+                completed: false
+              },
+              {
+                id: 'item-3',
+                text: 'Clique no <strong>ícone de engrenagem</strong> que aparece à esquerda da descrição da composição',
+                completed: false
+              },
+              {
+                id: 'item-4',
+                text: 'Marque o <strong>checkbox à esquerda de um item</strong> para selecioná-lo',
+                completed: false
+              },
+              {
+                id: 'item-5',
+                text: 'Clique em <strong>"Gerar Lista de Materiais"</strong>',
+                completed: false
+              },
+              {
+                id: 'item-6',
+                text: 'Defina a <strong>quantidade do item com base na quantidade orçada</strong> (utilizar o valor <strong>10</strong> para todos os itens) e clique em <strong>"Salvar"</strong>',
+                completed: false
+              },
+              {
+                id: 'item-7',
+                text: 'Finalize clicando em <strong>"Salvar e Aprovar"</strong>',
+                completed: false
+              }
+            ]
+          },
+          {
+            id: 'page-3',
+            title: '✅ MÓDULO 3 – CRIAÇÃO DE COMPOSIÇÃO (PASSO 1)',
+            subtitle: '🏗️ Objetivo: Criar uma nova composição com dados iniciais.',
+            items: [
+              {
+                id: 'comp-1',
+                text: 'Insira a descrição: <strong>"Treinamento Guiado – Dia Três"</strong>',
+                completed: false
+              },
+              {
+                id: 'comp-2',
+                text: 'Utilize o modelo <strong>SINAPI</strong> como referência',
+                completed: false
+              },
+              {
+                id: 'comp-3',
+                text: 'Selecione a opção para <strong>arredondar valores com duas casas decimais</strong>',
+                completed: false
+              },
+              {
+                id: 'comp-4',
+                text: 'Tipo de composição: <strong>ASTU</strong>',
+                completed: false
+              },
+              {
+                id: 'comp-5',
+                text: 'Unidade de medida: <strong>m²</strong>',
+                completed: false
+              }
+            ]
+          },
+          {
+            id: 'page-4',
+            title: '✅ MÓDULO 4 – CRIAÇÃO DE COMPOSIÇÃO (PASSO 2)',
+            subtitle: '📋 Objetivo: Selecionar bases de preço para a composição.',
+            items: [
+              {
+                id: 'comp-base-1',
+                text: 'Marque as seguintes bases de preço: <strong>SINAPI, SICRO3 e SBC</strong>',
+                completed: false
+              },
+              {
+                id: 'comp-base-2',
+                text: '⚠️ <strong>Atenção:</strong> Não feche essa aba – ela será utilizada novamente no próximo passo',
+                completed: false
+              }
+            ]
+          },
+          {
+            id: 'page-5',
+            title: '✅ MÓDULO 5 – CRIAÇÃO DE INSUMO',
+            subtitle: '🔧 Objetivo: Criar um insumo e vinculá-lo à composição.',
+            items: [
+              {
+                id: 'insumo-dia3-1',
+                text: 'No menu lateral esquerdo, acesse o menu <strong>"Insumos"</strong>',
+                completed: false
+              },
+              {
+                id: 'insumo-dia3-2',
+                text: 'Com a tecla <strong>CTRL pressionada</strong>, clique com o <strong>botão direito do mouse</strong> sobre a opção <strong>"Criar Insumo"</strong>',
+                completed: false
+              },
+              {
+                id: 'insumo-dia3-3',
+                text: 'Preencha os seguintes campos:<br/>• Código: <strong>001</strong><br/>• Descrição: <strong>"Treinamento Guiado Nível 1"</strong><br/>• Unidade de medida: <strong>m²</strong><br/>• Tipo de insumo: <strong>Mão de obra</strong><br/>• Valor desonerado: <strong>R$ 100,00</strong><br/>• Valor não desonerado: <strong>R$ 100,00</strong>',
+                completed: false
+              },
+              {
+                id: 'insumo-dia3-4',
+                text: 'Após a criação do insumo, <strong>copie o código correspondente</strong>',
+                completed: false
+              },
+              {
+                id: 'insumo-dia3-5',
+                text: 'Retorne à aba onde a <strong>composição foi criada</strong>',
+                completed: false
+              },
+              {
+                id: 'insumo-dia3-6',
+                text: 'Clique em <strong>"Adicionar Insumos"</strong>, cole o código copiado e confirme para incluir o insumo à composição',
+                completed: false
+              }
+            ]
+          }
+        ]
       }
     ],
     quiz: {
