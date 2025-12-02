@@ -51,6 +51,7 @@ export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigat
       {/* Day Content */}
       {currentDay.pages && currentDay.pages.length > 0 ? (
         <DayContent 
+          key={currentDay.id}
           pages={currentDay.pages}
           onComplete={() => setIsTrainingStarted(false)}
           onTrainingStart={() => setIsTrainingStarted(true)}
