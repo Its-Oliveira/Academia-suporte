@@ -497,7 +497,7 @@ export const modules: Module[] = [
         pages: [
           {
             id: 'page-1',
-            title: '✅ MÓDULO DE COMPRAS - 1.1. CRIAÇÃO DE PEDIDO DE COMPRAS (TESTE GUIADO – <SEU NOME>)',
+            title: '✅ MÓDULO 1 – CRIAÇÃO DE PEDIDO DE COMPRAS',
             subtitle: '🛒 Objetivo: Criar um pedido de compras vinculado ao orçamento e obra do Dia 1.',
             items: [
               {
@@ -507,7 +507,7 @@ export const modules: Module[] = [
               },
               {
                 id: 'compras-2',
-                text: 'No formulário de criação do pedido, insira a descrição: <strong>"Nível 1 – TESTE GUIADO <SEU NOME>"</strong>',
+                text: 'No formulário de criação do pedido, insira a descrição: <strong>"Nível 1 – TESTE GUIADO [SEU NOME]"</strong>',
                 completed: false
               },
               {
@@ -517,7 +517,7 @@ export const modules: Module[] = [
               },
               {
                 id: 'compras-4',
-                text: 'Vincule também a <strong>obra criada no primeiro dia</strong> do treinamento (TESTE GUIADO <SEU NOME>)',
+                text: 'Vincule também a <strong>obra criada no primeiro dia</strong> do treinamento (TESTE GUIADO ELISA)',
                 completed: false
               }
             ]
