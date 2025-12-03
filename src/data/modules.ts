@@ -566,8 +566,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-3',
-            title: '✅ MÓDULO 3 – CRIAÇÃO DE COMPOSIÇÃO (PASSO 1)',
-            subtitle: '🏗️ Objetivo: Criar uma nova composição com dados iniciais.',
+            title: '✅ MÓDULO 3 – CRIAÇÃO DE COMPOSIÇÃO',
+            subtitle: '🏗️ Objetivo: Criar uma nova composição com dados iniciais e selecionar bases de preço.',
             items: [
               {
                 id: 'comp-1',
@@ -593,29 +593,17 @@ export const modules: Module[] = [
                 id: 'comp-5',
                 text: 'Unidade de medida: <strong>m²</strong>',
                 completed: false
+              },
+              {
+                id: 'comp-6',
+                text: 'Marque as seguintes bases de preço: <strong>SINAPI, SICRO3 e SBC</strong>',
+                completed: false
               }
             ]
           },
           {
             id: 'page-4',
-            title: '✅ MÓDULO 4 – CRIAÇÃO DE COMPOSIÇÃO (PASSO 2)',
-            subtitle: '📋 Objetivo: Selecionar bases de preço para a composição.',
-            items: [
-              {
-                id: 'comp-base-1',
-                text: 'Marque as seguintes bases de preço: <strong>SINAPI, SICRO3 e SBC</strong>',
-                completed: false
-              },
-              {
-                id: 'comp-base-2',
-                text: '⚠️ <strong>Atenção:</strong> Não feche essa aba – ela será utilizada novamente no próximo passo',
-                completed: false
-              }
-            ]
-          },
-          {
-            id: 'page-5',
-            title: '✅ MÓDULO 5 – CRIAÇÃO DE INSUMO',
+            title: '✅ MÓDULO 4 – CRIAÇÃO DE INSUMO',
             subtitle: '🔧 Objetivo: Criar um insumo e vinculá-lo à composição.',
             items: [
               {
