@@ -507,7 +507,7 @@ export const modules: Module[] = [
               },
               {
                 id: 'compras-2',
-                text: 'No formulário de criação do pedido, insira a descrição: <strong>"Nível 1 – TESTE GUIADO [SEU NOME]"</strong>',
+                text: 'No formulário de criação do pedido, insira a descrição: <strong>"Nível 1 – TESTE GUIADO SEU NOME"</strong>',
                 completed: false
               },
               {
