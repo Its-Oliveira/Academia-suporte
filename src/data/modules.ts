@@ -512,7 +512,7 @@ export const modules: Module[] = [
               },
               {
                 id: 'compras-3',
-                text: 'Vincule o <strong>orçamento criado no primeiro dia</strong> do treinamento (TESTE GUIADO [SEU NOME])',
+                text: 'Vincule o <strong>orçamento criado no primeiro dia</strong> do treinamento (TESTE GUIADO SEU NOME)',
                 completed: false
               },
               {
