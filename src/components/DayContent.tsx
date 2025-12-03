@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { TrainingTimer } from './TrainingTimer';
 import { ProgressBar } from './ProgressBar';
 import { CompletionScreen } from './CompletionScreen';
+import { EvaluationScreen } from './EvaluationScreen';
 
 interface DayContentProps {
   pages: DayPage[];
@@ -31,6 +32,7 @@ export function DayContent({
   dayDescription
 }: DayContentProps) {
   const [isStarted, setIsStarted] = useState(false);
+  const [showEvaluation, setShowEvaluation] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
   const [pagesData, setPagesData] = useState<DayPage[]>(pages);
@@ -87,15 +89,31 @@ export function DayContent({
     if (canGoNext) {
       setCurrentPageIndex(prev => prev + 1);
     } else if (allPagesComplete) {
-      setIsCompleted(true);
-      onComplete?.();
+      // Mostrar avaliação antes da conclusão
+      setShowEvaluation(true);
     }
+  };
+
+  const handleEvaluationComplete = () => {
+    setShowEvaluation(false);
+    setIsCompleted(true);
+    onComplete?.();
   };
 
   const handleStartTraining = () => {
     setIsStarted(true);
     onTrainingStart?.();
   };
+
+  // Tela de avaliação (após último módulo)
+  if (showEvaluation) {
+    return (
+      <EvaluationScreen 
+        dayNumber={dayNumber}
+        onContinue={handleEvaluationComplete}
+      />
+    );
+  }
 
   // Tela de conclusão
   if (isCompleted) {
