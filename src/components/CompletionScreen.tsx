@@ -25,7 +25,7 @@ export function CompletionScreen({
             </div>
           </div>
           <CardTitle className="text-3xl">
-            Parabéns! 🎉
+            Parabéns!
           </CardTitle>
           <p className="text-muted-foreground text-lg">
             Você concluiu o <strong>Dia {dayNumber}</strong> do treinamento com sucesso!
