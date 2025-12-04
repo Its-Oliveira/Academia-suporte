@@ -7,14 +7,16 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Day } from '@/types/training';
 import { DayContent } from './DayContent';
 import { cn } from '@/lib/utils';
-
 interface DayNavigationProps {
   days: Day[];
   currentDayIndex: number;
   onDayChange: (index: number) => void;
 }
-
-export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigationProps) {
+export function DayNavigation({
+  days,
+  currentDayIndex,
+  onDayChange
+}: DayNavigationProps) {
   const navigate = useNavigate();
   const [isTrainingStarted, setIsTrainingStarted] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -22,13 +24,10 @@ export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigat
   const currentDay = days[currentDayIndex];
   const canGoPrevious = currentDayIndex > 0;
   const canGoNext = currentDayIndex < days.length - 1;
-
   const handleDayChange = (newIndex: number) => {
     if (newIndex === currentDayIndex || isAnimating) return;
-    
     setAnimationDirection(newIndex > currentDayIndex ? 'right' : 'left');
     setIsAnimating(true);
-    
     setTimeout(() => {
       onDayChange(newIndex);
       setTimeout(() => {
@@ -36,120 +35,40 @@ export function DayNavigation({ days, currentDayIndex, onDayChange }: DayNavigat
       }, 50);
     }, 150);
   };
-
   const handleNextDay = () => {
     setIsTrainingStarted(false);
     handleDayChange(currentDayIndex + 1);
   };
-
   const handleBackToTraining = () => {
     navigate('/training');
   };
-
-  return (
-    <div className="space-y-6">
+  return <div className="space-y-6">
       {/* Progress Indicator - Oculto quando treinamento iniciado */}
-      {!isTrainingStarted && (
-        <div className="flex items-center justify-center gap-2">
-          {days.map((day, index) => (
-            <Button
-              key={day.id}
-              variant={index === currentDayIndex ? 'default' : 'outline'}
-              size="sm"
-              onClick={() => handleDayChange(index)}
-              className={cn(
-                "min-w-[100px] transition-all duration-300",
-                index === currentDayIndex && "scale-105 shadow-md"
-              )}
-            >
+      {!isTrainingStarted && <div className="flex items-center justify-center gap-2">
+          {days.map((day, index) => <Button key={day.id} variant={index === currentDayIndex ? 'default' : 'outline'} size="sm" onClick={() => handleDayChange(index)} className={cn("min-w-[100px] transition-all duration-300", index === currentDayIndex && "scale-105 shadow-md")}>
               {day.title}
-            </Button>
-          ))}
-        </div>
-      )}
+            </Button>)}
+        </div>}
 
       {/* Day Content with Animation */}
-      <div
-        className={cn(
-          "transition-all duration-300 ease-out",
-          isAnimating && animationDirection === 'right' && "opacity-0 translate-x-4",
-          isAnimating && animationDirection === 'left' && "opacity-0 -translate-x-4",
-          !isAnimating && "opacity-100 translate-x-0"
-        )}
-      >
-        {currentDay.pages && currentDay.pages.length > 0 ? (
-          <DayContent 
-            key={currentDay.id}
-            pages={currentDay.pages}
-            onComplete={() => setIsTrainingStarted(false)}
-            onTrainingStart={() => setIsTrainingStarted(true)}
-            onNextDay={canGoNext ? handleNextDay : undefined}
-            onBackToTraining={handleBackToTraining}
-            dayNumber={currentDayIndex + 1}
-            hasNextDay={canGoNext}
-            dayDescription={currentDay.description}
-          />
-        ) : (
-          <Card>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <div>
-                  <CardTitle className="text-2xl">{currentDay.title}</CardTitle>
-                  <CardDescription className="mt-2">{currentDay.description}</CardDescription>
-                </div>
-                <Badge variant="outline">
-                  Dia {currentDayIndex + 1} de {days.length}
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {/* Main Content */}
-              <div>
-                <h3 className="text-lg font-semibold mb-3 text-foreground">Conteúdo do Treinamento</h3>
-                <div 
-                  className="prose prose-sm max-w-none text-muted-foreground"
-                  dangerouslySetInnerHTML={{ __html: currentDay.content }}
-                />
-              </div>
-
-              {/* Exercises */}
-              {currentDay.exercises && (
-                <div className="pt-4 border-t">
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">Atividades Práticas</h3>
-                  <div 
-                    className="prose prose-sm max-w-none text-muted-foreground"
-                    dangerouslySetInnerHTML={{ __html: currentDay.exercises }}
-                  />
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        )}
+      <div className={cn("transition-all duration-300 ease-out", isAnimating && animationDirection === 'right' && "opacity-0 translate-x-4", isAnimating && animationDirection === 'left' && "opacity-0 -translate-x-4", !isAnimating && "opacity-100 translate-x-0")}>
+        {currentDay.pages && currentDay.pages.length > 0 ? <DayContent key={currentDay.id} pages={currentDay.pages} onComplete={() => setIsTrainingStarted(false)} onTrainingStart={() => setIsTrainingStarted(true)} onNextDay={canGoNext ? handleNextDay : undefined} onBackToTraining={handleBackToTraining} dayNumber={currentDayIndex + 1} hasNextDay={canGoNext} dayDescription={currentDay.description} /> : <Card>
+            
+            
+          </Card>}
       </div>
 
       {/* Navigation Buttons - Ocultos quando treinamento iniciado */}
-      {!isTrainingStarted && (
-        <div className="flex justify-between items-center">
-          <Button
-            variant="outline"
-            onClick={() => handleDayChange(currentDayIndex - 1)}
-            disabled={!canGoPrevious || isAnimating}
-            className="gap-2 transition-all duration-200 hover:scale-105"
-          >
+      {!isTrainingStarted && <div className="flex justify-between items-center">
+          <Button variant="outline" onClick={() => handleDayChange(currentDayIndex - 1)} disabled={!canGoPrevious || isAnimating} className="gap-2 transition-all duration-200 hover:scale-105">
             <ChevronLeft className="h-4 w-4" />
             Dia Anterior
           </Button>
 
-          <Button
-            onClick={() => handleDayChange(currentDayIndex + 1)}
-            disabled={!canGoNext || isAnimating}
-            className="gap-2 transition-all duration-200 hover:scale-105"
-          >
+          <Button onClick={() => handleDayChange(currentDayIndex + 1)} disabled={!canGoNext || isAnimating} className="gap-2 transition-all duration-200 hover:scale-105">
             Próximo Dia
             <ChevronRight className="h-4 w-4" />
           </Button>
-        </div>
-      )}
-    </div>
-  );
+        </div>}
+    </div>;
 }
