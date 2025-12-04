@@ -661,82 +661,30 @@ export const modules: Module[] = [
       {
         id: 'day-1',
         title: 'Dia 1',
-        description: 'Conteúdo em desenvolvimento',
+        description: '',
         content: '',
-        pages: [
-          {
-            id: 'page-1',
-            title: 'MÓDULO 1',
-            subtitle: 'Conteúdo em desenvolvimento.',
-            items: [
-              {
-                id: 'n2-d1-item-1',
-                text: 'Conteúdo em desenvolvimento',
-                completed: false
-              }
-            ]
-          }
-        ]
+        pages: []
       },
       {
         id: 'day-2',
         title: 'Dia 2',
-        description: 'Conteúdo em desenvolvimento',
+        description: '',
         content: '',
-        pages: [
-          {
-            id: 'page-1',
-            title: 'MÓDULO 1',
-            subtitle: 'Conteúdo em desenvolvimento.',
-            items: [
-              {
-                id: 'n2-d2-item-1',
-                text: 'Conteúdo em desenvolvimento',
-                completed: false
-              }
-            ]
-          }
-        ]
+        pages: []
       },
       {
         id: 'day-3',
         title: 'Dia 3',
-        description: 'Conteúdo em desenvolvimento',
+        description: '',
         content: '',
-        pages: [
-          {
-            id: 'page-1',
-            title: 'MÓDULO 1',
-            subtitle: 'Conteúdo em desenvolvimento.',
-            items: [
-              {
-                id: 'n2-d3-item-1',
-                text: 'Conteúdo em desenvolvimento',
-                completed: false
-              }
-            ]
-          }
-        ]
+        pages: []
       },
       {
         id: 'day-4',
         title: 'Dia 4',
-        description: 'Conteúdo em desenvolvimento',
+        description: '',
         content: '',
-        pages: [
-          {
-            id: 'page-1',
-            title: 'MÓDULO 1',
-            subtitle: 'Conteúdo em desenvolvimento.',
-            items: [
-              {
-                id: 'n2-d4-item-1',
-                text: 'Conteúdo em desenvolvimento',
-                completed: false
-              }
-            ]
-          }
-        ]
+        pages: []
       }
     ],
     quiz: {
