@@ -20,8 +20,8 @@ export const modules: Module[] = [
         pages: [
           {
             id: 'page-1',
-            title: '✅ MÓDULO 1 – CADASTROS',
-            subtitle: '🔧 Objetivo: Criar os principais registros do sistema para utilizar nas próximas etapas.',
+            title: 'MÓDULO 1 – CADASTROS',
+            subtitle: 'Objetivo: Criar os principais registros do sistema para utilizar nas próximas etapas.',
             items: [
               {
                 id: 'cadastro-1',
@@ -57,8 +57,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-2',
-            title: '✅ MÓDULO 2 – CRIAÇÃO E EDIÇÃO DE ORÇAMENTO',
-            subtitle: '📊 Objetivo: Criar um orçamento completo com base em dados cadastrados, aplicar configurações, realizar ajustes, emitir relatórios e explorar recursos adicionais do sistema.',
+            title: 'MÓDULO 2 – CRIAÇÃO E EDIÇÃO DE ORÇAMENTO',
+            subtitle: 'Objetivo: Criar um orçamento completo com base em dados cadastrados, aplicar configurações, realizar ajustes, emitir relatórios e explorar recursos adicionais do sistema.',
             items: [
               {
                 id: 'orcamento-1',
@@ -132,8 +132,8 @@ export const modules: Module[] = [
         pages: [
           {
             id: 'page-1',
-            title: '✅ MÓDULO 1 – CRIAÇÃO DE COMPOSIÇÃO',
-            subtitle: '🎯 Objetivo: Criar uma nova composição personalizada no sistema.',
+            title: 'MÓDULO 1 – CRIAÇÃO DE COMPOSIÇÃO',
+            subtitle: 'Objetivo: Criar uma nova composição personalizada no sistema.',
             items: [
               {
                 id: 'composicao-1',
@@ -169,8 +169,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-2',
-            title: '✅ MÓDULO 2 – CRIAR UM INSUMO',
-            subtitle: '🔧 Objetivo: Cadastrar um novo insumo personalizado no sistema.',
+            title: 'MÓDULO 2 – CRIAR UM INSUMO',
+            subtitle: 'Objetivo: Cadastrar um novo insumo personalizado no sistema.',
             items: [
               {
                 id: 'insumo-1',
@@ -186,8 +186,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-3',
-            title: '✅ MÓDULO 3 – CRIAR ENCARGOS',
-            subtitle: '📊 Objetivo: Configurar grupos de encargos sociais para Mensalista e Horista.',
+            title: 'MÓDULO 3 – CRIAR ENCARGOS',
+            subtitle: 'Objetivo: Configurar grupos de encargos sociais para Mensalista e Horista.',
             items: [
               {
                 id: 'encargos-1',
@@ -213,8 +213,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-4',
-            title: '✅ MÓDULO 4 – CRIAR BDI',
-            subtitle: '💰 Objetivo: Cadastrar um novo BDI (Benefícios e Despesas Indiretas).',
+            title: 'MÓDULO 4 – CRIAR BDI',
+            subtitle: 'Objetivo: Cadastrar um novo BDI (Benefícios e Despesas Indiretas).',
             items: [
               {
                 id: 'bdi-1',
@@ -230,8 +230,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-5',
-            title: '✅ MÓDULO 5 – EDITAR ORÇAMENTO E INSERIR FIT',
-            subtitle: '📝 Objetivo: Editar o orçamento criado no Dia 1 e inserir dados do FIT.',
+            title: 'MÓDULO 5 – EDITAR ORÇAMENTO E INSERIR FIT',
+            subtitle: 'Objetivo: Editar o orçamento criado no Dia 1 e inserir dados do FIT.',
             items: [
               {
                 id: 'fit-1',
@@ -257,8 +257,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-6',
-            title: '✅ MÓDULO 6 – APLICAR BDI, ENCARGO E DMT',
-            subtitle: '⚙️ Objetivo: Adicionar BDI, Encargos e DMT ao orçamento.',
+            title: 'MÓDULO 6 – APLICAR BDI, ENCARGO E DMT',
+            subtitle: 'Objetivo: Adicionar BDI, Encargos e DMT ao orçamento.',
             items: [
               {
                 id: 'aplicar-1',
@@ -284,8 +284,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-7',
-            title: '✅ MÓDULO 7 – SINCRONIZAÇÃO E COMPATIBILIZAÇÃO',
-            subtitle: '🔄 Objetivo: Sincronizar e compatibilizar bases de dados do orçamento.',
+            title: 'MÓDULO 7 – SINCRONIZAÇÃO E COMPATIBILIZAÇÃO',
+            subtitle: 'Objetivo: Sincronizar e compatibilizar bases de dados do orçamento.',
             items: [
               {
                 id: 'sync-1',
@@ -316,8 +316,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-8',
-            title: '✅ MÓDULO 8 – APLICAÇÕES NO ORÇAMENTO',
-            subtitle: '🎨 Objetivo: Aplicar configurações avançadas e gerar relatórios.',
+            title: 'MÓDULO 8 – APLICAÇÕES NO ORÇAMENTO',
+            subtitle: 'Objetivo: Aplicar configurações avançadas e gerar relatórios.',
             items: [
               {
                 id: 'app-1',
@@ -343,8 +343,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-9',
-            title: '✅ MÓDULO 9 – DIÁRIO DE OBRAS',
-            subtitle: '📔 Objetivo: Criar e preencher um diário de obras completo.',
+            title: 'MÓDULO 9 – DIÁRIO DE OBRAS',
+            subtitle: 'Objetivo: Criar e preencher um diário de obras completo.',
             items: [
               {
                 id: 'diario-1',
@@ -405,8 +405,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-10',
-            title: '✅ MÓDULO 10 – PLANEJAMENTO',
-            subtitle: '📅 Objetivo: Criar um planejamento de obra completo.',
+            title: 'MÓDULO 10 – PLANEJAMENTO',
+            subtitle: 'Objetivo: Criar um planejamento de obra completo.',
             items: [
               {
                 id: 'plan-1',
@@ -452,8 +452,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-11',
-            title: '✅ MÓDULO 11 – MEDIÇÃO',
-            subtitle: '📏 Objetivo: Criar e configurar medições do orçamento.',
+            title: 'MÓDULO 11 – MEDIÇÃO',
+            subtitle: 'Objetivo: Criar e configurar medições do orçamento.',
             items: [
               {
                 id: 'medicao-1',
@@ -497,8 +497,8 @@ export const modules: Module[] = [
         pages: [
           {
             id: 'page-1',
-            title: '✅ MÓDULO 1 – CRIAÇÃO DE PEDIDO DE COMPRAS',
-            subtitle: '🛒 Objetivo: Criar um pedido de compras vinculado ao orçamento e obra do Dia 1.',
+            title: 'MÓDULO 1 – CRIAÇÃO DE PEDIDO DE COMPRAS',
+            subtitle: 'Objetivo: Criar um pedido de compras vinculado ao orçamento e obra do Dia 1.',
             items: [
               {
                 id: 'compras-1',
@@ -524,8 +524,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-2',
-            title: '✅ MÓDULO 2 – ADIÇÃO DE ITEM AO PEDIDO (INSUMO)',
-            subtitle: '📦 Objetivo: Adicionar itens do orçamento ao pedido de compras.',
+            title: 'MÓDULO 2 – ADIÇÃO DE ITEM AO PEDIDO (INSUMO)',
+            subtitle: 'Objetivo: Adicionar itens do orçamento ao pedido de compras.',
             items: [
               {
                 id: 'item-1',
@@ -566,8 +566,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-3',
-            title: '✅ MÓDULO 3 – CRIAÇÃO DE COMPOSIÇÃO',
-            subtitle: '🏗️ Objetivo: Criar uma nova composição com dados iniciais e selecionar bases de preço.',
+            title: 'MÓDULO 3 – CRIAÇÃO DE COMPOSIÇÃO',
+            subtitle: 'Objetivo: Criar uma nova composição com dados iniciais e selecionar bases de preço.',
             items: [
               {
                 id: 'comp-1',
@@ -603,8 +603,8 @@ export const modules: Module[] = [
           },
           {
             id: 'page-4',
-            title: '✅ MÓDULO 4 – CRIAÇÃO DE INSUMO',
-            subtitle: '🔧 Objetivo: Criar um insumo e vinculá-lo à composição.',
+            title: 'MÓDULO 4 – CRIAÇÃO DE INSUMO',
+            subtitle: 'Objetivo: Criar um insumo e vinculá-lo à composição.',
             items: [
               {
                 id: 'insumo-dia3-1',
