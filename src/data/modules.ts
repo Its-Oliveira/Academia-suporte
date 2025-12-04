@@ -650,13 +650,95 @@ export const modules: Module[] = [
   {
     id: '2',
     title: 'Treinamento Guiado Nível 2',
-    description: '',
-    duration: 'A definir',
+    description: 'Treinamento completo dividido em 4 dias',
+    duration: '4 dias',
     content: `
       <div class="space-y-4">
-        <p class="text-muted-foreground">Conteúdo do módulo em desenvolvimento.</p>
+        <p class="text-muted-foreground">Este módulo contém um treinamento guiado dividido em 4 dias.</p>
       </div>
     `,
+    days: [
+      {
+        id: 'day-1',
+        title: 'Dia 1',
+        description: 'Conteúdo em desenvolvimento',
+        content: '',
+        pages: [
+          {
+            id: 'page-1',
+            title: 'MÓDULO 1',
+            subtitle: 'Conteúdo em desenvolvimento.',
+            items: [
+              {
+                id: 'n2-d1-item-1',
+                text: 'Conteúdo em desenvolvimento',
+                completed: false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'day-2',
+        title: 'Dia 2',
+        description: 'Conteúdo em desenvolvimento',
+        content: '',
+        pages: [
+          {
+            id: 'page-1',
+            title: 'MÓDULO 1',
+            subtitle: 'Conteúdo em desenvolvimento.',
+            items: [
+              {
+                id: 'n2-d2-item-1',
+                text: 'Conteúdo em desenvolvimento',
+                completed: false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'day-3',
+        title: 'Dia 3',
+        description: 'Conteúdo em desenvolvimento',
+        content: '',
+        pages: [
+          {
+            id: 'page-1',
+            title: 'MÓDULO 1',
+            subtitle: 'Conteúdo em desenvolvimento.',
+            items: [
+              {
+                id: 'n2-d3-item-1',
+                text: 'Conteúdo em desenvolvimento',
+                completed: false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'day-4',
+        title: 'Dia 4',
+        description: 'Conteúdo em desenvolvimento',
+        content: '',
+        pages: [
+          {
+            id: 'page-1',
+            title: 'MÓDULO 1',
+            subtitle: 'Conteúdo em desenvolvimento.',
+            items: [
+              {
+                id: 'n2-d4-item-1',
+                text: 'Conteúdo em desenvolvimento',
+                completed: false
+              }
+            ]
+          }
+        ]
+      }
+    ],
     quiz: {
       passingScore: 70,
       maxAttempts: 3,
