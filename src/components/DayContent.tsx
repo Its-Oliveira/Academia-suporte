@@ -133,7 +133,7 @@ export function DayContent({
       <div className="max-w-3xl mx-auto space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle className="text-2xl">📚 Prévia do Treinamento - Dia {dayNumber}</CardTitle>
+            <CardTitle className="text-2xl">Prévia do Treinamento - Dia {dayNumber}</CardTitle>
             <CardDescription>
               {dayDescription}
             </CardDescription>
