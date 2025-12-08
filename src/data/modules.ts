@@ -661,9 +661,124 @@ export const modules: Module[] = [
       {
         id: 'day-1',
         title: 'Dia 1',
-        description: '',
+        description: 'Cadastros e Orçamento',
         content: '',
-        pages: []
+        pages: [
+          {
+            id: 'page-1',
+            title: 'MÓDULO 1 – CADASTROS',
+            subtitle: 'Objetivo: Configurar BDI e Encargos Trabalhistas no sistema.',
+            items: [
+              {
+                id: 'n2-cadastro-1',
+                text: '<strong>BDI - Criar um novo BDI</strong><br/>1. Acesse a tela de BDI<br/>2. Clique em "Editar" no final do Grupo A<br/>3. No formulário, altere a letra do grupo para "O"<br/>4. Clique em "Administração Central"<br/>5. Altere a porcentagem para 5,00%<br/>6. Clique em "Atualizar Item"',
+                completed: false
+              },
+              {
+                id: 'n2-cadastro-2',
+                text: '<strong>BDI - Cadastrar um novo item no grupo</strong><br/>1. Clique em "Adicionar Item"<br/>2. Insira a descrição: "Taxa de Administração"<br/>3. Preencha a porcentagem com 6,00%<br/>4. Clique em "Adicionar Item" e depois em "Salvar"',
+                completed: false
+              },
+              {
+                id: 'n2-cadastro-3',
+                text: '<strong>BDI - Criar um novo grupo de BDI</strong><br/>1. Clique em "Novo Grupo"<br/>2. Escolha uma letra ainda não usada, como "N"<br/>3. Insira a descrição: "Novas Despesas"',
+                completed: false
+              },
+              {
+                id: 'n2-cadastro-4',
+                text: '<strong>Encargos Trabalhistas - Criar um encargo mensalista</strong><br/>1. Clique em "Criar Encargo"<br/>2. Preencha os campos:<br/>• Descrição: "Nível 2, mensalista"<br/>• Tipo: Mensalista<br/>• Local: (selecione o local apropriado)<br/>• Vigência: data inicial e final',
+                completed: false
+              },
+              {
+                id: 'n2-cadastro-5',
+                text: '<strong>Encargos Trabalhistas - Adicionar grupo de encargos</strong><br/>1. Informe uma descrição, como "INSS"<br/>2. Clique em "Salvar"<br/>3. Clique em "+" no grupo<br/>4. Descreva: "Alimentação"<br/>5. Preencha:<br/>• Desonerado: 10%<br/>• Onerado: 5%',
+                completed: false
+              },
+              {
+                id: 'n2-cadastro-6',
+                text: '<strong>Encargos Trabalhistas - Criar um encargo horista</strong><br/>Repita os mesmos passos do encargo mensalista, alterando:<br/>• Descrição: "Nível 2, horista"<br/>• Tipo: Horista',
+                completed: false
+              }
+            ]
+          },
+          {
+            id: 'page-2',
+            title: 'MÓDULO 2 – ORÇAMENTO',
+            subtitle: 'Objetivo: Trabalhar com etapas, composições, insumos, cronograma, permissões e relatórios.',
+            items: [
+              {
+                id: 'n2-orcamento-1',
+                text: '<strong>Etapas e Composições - Criar nova etapa</strong><br/>• Criar nova etapa com o nome: "TREINAMENTO GUIADO NÍVEL 2"<br/>• Adicionar composições pelo código SINAPI: 105266, 97150, 105275, 97163<br/>• Adicionar composição pela descrição: "ALVENARIA EMBASAMENTO E=20 CM BLOCO CONCRETO"<br/>• Adicionar composições pelo código Sicro 3: 2009619, 2009618, 0909621<br/>• Adicionar insumos pelo código SINAPI: 00011270, 00000412, 00000414',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-2',
+                text: '<strong>Menu Exibir - Lista de Insumos - Editar insumo</strong><br/>1. Acesse a lista de insumos<br/>2. Clique em "Editar" no primeiro insumo<br/>3. Realize as seguintes alterações:<br/>• Descrição: "Teste edição insumo nível 2"<br/>• Tipo: "Material"<br/>• Marque como "Mensalista"<br/>• Preço: R$ 4,50<br/>4. Salve as alterações',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-3',
+                text: '<strong>Menu Exibir - Lista de Insumos - Gerar relatório</strong><br/>• Gere o relatório "Curva ABC de Insumos"',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-4',
+                text: '<strong>Menu Exibir - Lista de Insumos - Substituir insumo</strong><br/>• Substitua um insumo por outro da base SINAPI usando o código: 00001379',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-5',
+                text: '<strong>Menu Exibir - Lista de Insumos - Excluir insumo</strong><br/>• Exclua o 2º insumo da lista (digite "exclusão" para confirmar)',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-6',
+                text: '<strong>Menu Exibir - Lista de Composições - Editar composição</strong><br/>1. Acesse a lista de composições<br/>2. Edite a descrição da primeira composição<br/>3. Novo texto: "Teste Edição Nível 2"<br/>4. Salve as alterações',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-7',
+                text: '<strong>Menu Exibir - Cronograma - Criar cronograma</strong><br/>1. Crie um cronograma com período de 180 dias<br/>2. Altere para intervalos de 15 dias<br/>3. Distribua percentuais em cada intervalo até totalizar 100%',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-8',
+                text: '<strong>Menu Editar - Orçamento - Configurações</strong><br/>• Método: Arredondar em 2 casas decimais<br/>• Ative a opção "Máscara de Item"<br/>• Clique em "Salvar"',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-9',
+                text: '<strong>Menu Editar - Permissões - Atribuir permissões</strong><br/>1. Selecione os usuários desejados<br/>2. Atribua as seguintes permissões:<br/>• Pode Emitir Relatórios<br/>• Pode Editar o Orçamento<br/>• Pode Excluir o Orçamento',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-10',
+                text: '<strong>Menu Editar - Bancos - Configurar base CPOS</strong><br/>1. Ative a base CPOS<br/>2. Escolha a data-base mais recente<br/>3. Configure arredondamento: 2 casas decimais<br/>4. Ative a opção: "Atualizar Estrutura da Composição"',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-11',
+                text: '<strong>Menu Editar - Ferramentas - Importar e Compatibilizar</strong><br/>• Importar do Excel: utilize o modelo fornecido pelo sistema<br/>• Compatibilizar bases: substitua 3 itens com equivalentes de outro banco',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-12',
+                text: '<strong>Menu Editar - Ajuste RDC - Aplicar desconto</strong><br/>• Aplique um desconto de 22%',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-13',
+                text: '<strong>Menu Editar - Gerador de Propostas para Pregão</strong><br/>1. Lance 50% do valor do orçamento no campo "menor lance"<br/>2. Gere 18 propostas<br/>3. Selecione a opção "desconto RDC"',
+                completed: false
+              },
+              {
+                id: 'n2-orcamento-14',
+                text: '<strong>Menu Editar - Relatórios - Personalizar e baixar</strong><br/>1. Personalize os relatórios inserindo:<br/>• Nome da empresa<br/>• Logo<br/>• Cabeçalho customizado<br/>2. Baixe os seguintes relatórios:<br/>• Sintético<br/>• Analítico<br/>• Curva ABC',
+                completed: false
+              }
+            ]
+          }
+        ]
       },
       {
         id: 'day-2',
